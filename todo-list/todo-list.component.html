@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit()" #formName="ngForm">
+    <h2>Add ToDo</h2>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="add todo" [(ngModel)]="todoModel"
+        name="todo" id="todo" required />
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!formName.form.valid">
+      Add ToDo
+    </button>
+  </form>
+  
+  <pre>{{ listOfTodo | json }}</pre>
+  
