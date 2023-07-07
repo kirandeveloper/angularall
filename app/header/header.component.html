@@ -1,0 +1,36 @@
+  <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+    <div class="container-fluid">	    
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <div class="mx-left">
+            <a class="navbar-brand " href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <ul class="navbar-nav me-left order-0 ">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/product" routerLinkActive="active" ariaCurrentWhenActive="page">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/searchfilter" routerLinkActive="active" ariaCurrentWhenActive="page">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contactus" routerLinkActive="active" ariaCurrentWhenActive="page">Contacts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">SignIn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/signup" routerLinkActive="active" ariaCurrentWhenActive="page">SignUp</a>
+          </li>
+        </ul>
+        
+      </div>
+      <section class="ml-auto justify-content-end">
+        <app-search></app-search>
+      </section>
+    </div>
+  </nav>

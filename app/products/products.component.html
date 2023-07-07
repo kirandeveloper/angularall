@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <h3 class="m-3">Product List</h3>
+  <section class="row">
+    <div class="card col-sm-2 m-4" *ngFor="let datas of httpData">
+      <div class="card-body">
+        <h5 class="card-title">{{datas.id}}</h5>
+        <p>
+          <img [src]="datas.thumbnailUrl" class="img-fluid" />
+        </p>
+        <p class="card-text">{{datas.title}}</p>        
+      </div>
+    </div>
+  </section>
+</div>

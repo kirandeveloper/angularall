@@ -1,0 +1,12 @@
+<div class="dls-menu-item">
+    
+</div>
+<div class="card">    
+    <div class="card-body">
+        <button (click)="onPress()" class="btn btn-outline-primary">{{Show?"Show":"Hide"}}</button>
+        <div id="comp-render" *ngIf="display">
+            <app-mycomp1></app-mycomp1>
+         </div>
+    </div>
+</div>
+

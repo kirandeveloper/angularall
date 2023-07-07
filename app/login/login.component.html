@@ -1,0 +1,27 @@
+<div class="logincontainer">
+    <form (ngSubmit)="onLogin()" #myForm="ngForm">
+        <div class="mb-3 text-center">
+            <h4>Login</h4>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="uname">User Name</label>
+            <input class="form-control" type="text" name="uName" id="uname"
+            [(ngModel)]="login.uName" required pattern="^[a-z]+$" #uName="ngModel"/>
+            <div class="alert alert-danger" *ngIf="uName.touched && uName.invalid">
+                <span *ngIf="uName.errors?.['required']">Username is required</span>
+                <span *ngIf="uName.errors?.['pattern']">Please enter valid Username</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="upass">Password</label>
+            <input class="form-control" type="password" name="uPass" id="upass"
+            [(ngModel)]="login.uPass" required #uPass="ngModel"/>
+            <div class="alert alert-danger" *ngIf="uPass.touched && uPass.invalid">
+                <span>Password is required</span>
+            </div>
+        </div>
+        <input class="btn btn-outline-primary" type="submit" value="Login"
+        [disabled]="myForm.invalid">
+        <input class="btn btn-outline-success ms-3" type="reset" value="Reset">
+    </form>
+</div>

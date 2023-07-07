@@ -1,0 +1,36 @@
+<div class="signupcontainer">
+    <form (ngSubmit)="onSignup()" #myForm="ngForm">
+        <div class="mb-3 text-center">
+            <h4>New User SignUp</h4>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="uname">User Name</label>
+            <input class="form-control" type="text" name="uName" id="uname"
+            [(ngModel)]="signup.uName" required pattern="^[a-z]+$" #uName="ngModel"/>
+            <div class="alert alert-danger" *ngIf="uName.touched && uName.invalid">
+                <span *ngIf="uName.errors?.['required']">Username is required</span>
+                <span *ngIf="uName.errors?.['pattern']">Please enter valid Username</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="uemailid">User EmailId</label>
+            <input class="form-control" type="text" name="uEmailid" id="uemailid"
+            [(ngModel)]="signup.uEmailid" required pattern="^[a-z]+$" #uEmailid="ngModel"/>
+            <div class="alert alert-danger" *ngIf="uEmailid.touched && uEmailid.invalid">
+                <span *ngIf="uEmailid.errors?.['required']">Username is required</span>
+                <span *ngIf="uEmailid.errors?.['pattern']">Please enter valid Username</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="upass">Password</label>
+            <input class="form-control" type="password" name="uPass" id="upass"
+            [(ngModel)]="signup.uPass" required #uPass="ngModel"/>
+            <div class="alert alert-danger" *ngIf="uPass.touched && uPass.invalid">
+                <span>Password is required</span>
+            </div>
+        </div>
+        <input class="btn btn-outline-primary" type="submit" value="Signup"
+        [disabled]="myForm.invalid">
+        <input class="btn btn-outline-success ms-3" type="reset" value="Reset">
+    </form>
+</div>
