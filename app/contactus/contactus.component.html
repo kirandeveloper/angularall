@@ -1,0 +1,46 @@
+<div class="contactuscontainer">
+    <form (ngSubmit)="onSignup()" #myForm="ngForm">
+        <div class="mb-3 text-center">
+            <h4>Contact Us</h4>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="uname">User Name</label>
+            <input class="form-control" type="text" name="uName" id="uname"
+            [(ngModel)]="contactus.uName" required pattern="^[a-z]+$" #uName="ngModel"/>
+            <div class="alert alert-danger" *ngIf="uName.touched && uName.invalid">
+                <span *ngIf="uName.errors?.['required']">Username is required</span>
+                <span *ngIf="uName.errors?.['pattern']">Please enter valid Username</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="uemailid">User EmailId</label>
+            <input class="form-control" type="text" name="uEmailid" id="uemailid"
+            [(ngModel)]="contactus.uEmailid" required pattern="^[a-z]+$" #uEmailid="ngModel"/>
+            <div class="alert alert-danger" *ngIf="uEmailid.touched && uEmailid.invalid">
+                <span *ngIf="uEmailid.errors?.['required']">User EmailID is required</span>
+                <span *ngIf="uEmailid.errors?.['pattern']">Please enter valid EmailID</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="umobileno">User Mobile No</label>
+            <input class="form-control" type="text" name="umobileno" id="umobileno"
+            [(ngModel)]="contactus.uMobileNo" required pattern="/^-?(0|[1-9]\d*)?$/)]" #uMobileNo="ngModel" maxlength="10"/>
+            <div class="alert alert-danger" *ngIf="uMobileNo.touched && uMobileNo.invalid">
+                <span *ngIf="uMobileNo.errors?.['required']">Mobile no is required</span>
+                <span *ngIf="uMobileNo.errors?.['pattern']">Please enter valid Mobile No</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="ucomments">Comments</label>
+            <textarea class="form-control" type="text" name="ucomments" id="ucomments"
+            [(ngModel)]="contactus.uComments" required #uComments="ngModel"></textarea>
+            
+            <div class="alert alert-danger" *ngIf="uComments.touched && uComments.invalid">
+                <span *ngIf="uComments.errors?.['required']">Comments are required</span>
+            </div>
+        </div>
+        <input class="btn btn-outline-primary" type="submit" value="Submit"
+        [disabled]="myForm.invalid">
+        <input class="btn btn-outline-success ms-3" type="reset" value="Reset">
+    </form>
+</div>

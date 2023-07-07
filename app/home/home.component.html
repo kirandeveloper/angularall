@@ -1,0 +1,38 @@
+<section class="container-fluid mt-5">
+    <app-carousel></app-carousel>
+    <div class="row">
+        <section class="col-sm-6">
+            <div class="my-4">
+                <app-toogle></app-toogle>
+            </div>
+            <div class="my-4">
+                <app-dialog></app-dialog>
+            </div>
+        </section>
+        <section class="col-sm-6 my-4">
+            <div class="mb-4">
+                <app-parentcomp></app-parentcomp>
+            </div>
+            <div class="mb-4">
+                <p>Parent to Child</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="makeCenter">
+                            List of Programming Languages
+                        </h4>
+                        <ul class="uList">
+                            <li *ngFor="let lang of list_prog"
+                            [ngClass]=
+                        "{'active': list_prog[options]===lang}" 
+                        (click)="onClick(lang)" class="lLang">
+                                {{lang}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <app-childcomp2 [title]="prog_title" [details]="curr_info">
+                </app-childcomp2>
+            </div>
+        </section>
+    </div>
+</section>
